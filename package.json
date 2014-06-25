@@ -2,7 +2,7 @@
   "name": "node-salesforce-proxy",
   "private": true,
   "dependencies": {
-    "express": "*",
-    "request": "*"
+    "express": "3.12.x",
+    "request": "2.36.x"
   }
 }
