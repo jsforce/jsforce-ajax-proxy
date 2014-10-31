@@ -23,7 +23,7 @@ var proxyCounter = 0;
 app.all('/proxy/?*', function(req, res) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,POST,PATCH,PUT,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Authorization,Content-Type,Salesforceproxy-Endpoint,X-Authorization,X-SFDC-Session,SOAPAction,SForce-Auto-Assign,If-Modified-Since');
+  res.header('Access-Control-Allow-Headers', 'Authorization,Content-Type,Salesforceproxy-Endpoint,X-Authorization,X-SFDC-Session,SOAPAction,SForce-Auto-Assign,If-Modified-Since,X-User-Agent');
   res.header('Access-Control-Expose-Headers', 'SForce-Limit-Info');
   if (req.method === 'OPTIONS') {
     res.end();
