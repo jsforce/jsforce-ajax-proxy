@@ -31,7 +31,7 @@ app.all('/proxy/?*', function(req, res) {
   }
   var contentType = "application/x-www-form-urlencoded";
   var sfEndpoint = req.headers["salesforceproxy-endpoint"];
-  if (!/^https:\/\/[a-zA-Z0-9\.\-]+\.(force|salesforce|database)\.com\//.test(sfEndpoint)) {
+  if (!/^https:\/\/[a-zA-Z0-9\.\-]+\.(force|salesforce|cloudforce|database)\.com\//.test(sfEndpoint)) {
     res.send(400, "Proxying endpoint is not allowed.");
     return;
   }
