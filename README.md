@@ -5,8 +5,7 @@ A proxy server to access Salesforce API from JSforce JavaScript apps served outs
 As the same origin policy restricts communication to the Salesforce API from outer domain,
 you should serve cross-domain proxy server when you build a app using JSforce outside of Salesforce.
 
-This app will become obsolete immediately when Salesforce API supports CORS.
-I hope the day will come soon.
+As Salesforce REST API supports CORS (Cross-Origin Resource Sharing) access, this proxy is not always required when you are using only REST API and you can change security setting in your connecting organization. This proxy is still useful because you can access not only REST APIs but also SOAP-based APIs from outer domain.
 
 ## Usage
 
@@ -40,11 +39,20 @@ conn.query('SELECT Id, Name FROM Account', function(err, res) {
 
 ## Using as Middleware
 
-Ajax proxy works as connect middleware. For example you can include the proxy functionality in your express.js app :
+Ajax proxy is not only provided in standalone server but also works as connect middleware.
+You can include the proxy functionality in your express.js app.
+
+First install `jsforce-ajax-proxy` in your app project:
+
+```
+$ npm install jsforce-ajax-proxy --save
+```
+
+Then include the middleware under certain path:
 
 ```javascript
 var express = require('express');
-var jsforceAjaxProxy = require('./proxy');
+var jsforceAjaxProxy = require('jsforce-ajax-proxy');
 var app = express();
 
 app.all('/proxy/?*', jsforceAjaxProxy());
@@ -61,3 +69,4 @@ app.all('/proxy/?*', jsforceAjaxProxy({ enableCORS: true });
 
 You don't have to use this app when you are building a JSforce app in Visualforce,
 because it works in the same domain as Salesforce API.
+
