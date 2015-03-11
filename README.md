@@ -21,7 +21,7 @@ $ npm install
 Run proxy server :
 
 ```
-$ node proxy.js
+$ npm start
 ```
 
 When you use JSforce in your JavaScript app, set `proxyUrl` when creating `Connection` instance. 
@@ -37,6 +37,25 @@ conn.query('SELECT Id, Name FROM Account', function(err, res) {
   // ...
 });
 ```
+
+## Using as Middleware
+
+Ajax proxy works as connect middleware. For example you can include the proxy functionality in your express.js app :
+
+```javascript
+var express = require('express');
+var jsforceAjaxProxy = require('./proxy');
+var app = express();
+
+app.all('/proxy/?*', jsforceAjaxProxy());
+```
+
+If you want to accept http request from other origin, set `enableCORS` option to true.
+
+```javascript
+app.all('/proxy/?*', jsforceAjaxProxy({ enableCORS: true });
+```
+
 
 ## Note
 
