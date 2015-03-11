@@ -25,7 +25,7 @@ $ npm start
 
 When you use JSforce in your JavaScript app, set `proxyUrl` when creating `Connection` instance. 
 
-```
+```javascript
 var conn = jsforce.Connection({
   accessToken: '<access_token>',
   instanceUrl: '<instance_url>',
