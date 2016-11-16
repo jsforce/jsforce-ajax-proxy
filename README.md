@@ -61,7 +61,7 @@ app.all('/proxy/?*', jsforceAjaxProxy());
 If you want to accept http request from other origin, set `enableCORS` option to true.
 
 ```javascript
-app.all('/proxy/?*', jsforceAjaxProxy({ enableCORS: true });
+app.all('/proxy/?*', jsforceAjaxProxy({ enableCORS: true }));
 ```
 
 
