@@ -23,7 +23,7 @@ Run proxy server :
 $ npm start
 ```
 
-When you use JSforce in your JavaScript app, set `proxyUrl` when creating `Connection` instance. 
+When you use JSforce in your JavaScript app, set `proxyUrl` when creating `Connection` instance.
 
 ```javascript
 var conn = new jsforce.Connection({
@@ -36,6 +36,10 @@ conn.query('SELECT Id, Name FROM Account', function(err, res) {
   // ...
 });
 ```
+
+### Proxy Authentication
+
+Authentication is also supported through the use of the X-Proxy-Authorization header. User name and password are specified through the env variables USER_NAME and PASSWORD. Proxy Authentication is disabled by default. Set ENABLE_AUTH=true in order to enable it.
 
 ## Using as Middleware
 
@@ -69,4 +73,3 @@ app.all('/proxy/?*', jsforceAjaxProxy({ enableCORS: true }));
 
 You don't have to use this app when you are building a JSforce app in Visualforce,
 because it works in the same domain as Salesforce API.
-
