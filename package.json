@@ -15,7 +15,10 @@
   ],
   "dependencies": {
     "debug": "^2.1.2",
+    "ds": "^1.4.2",
     "express": "^3.12.1",
+    "fs": "0.0.1-security",
+    "https": "^1.0.0",
     "request": "^2.36.0"
   }
 }

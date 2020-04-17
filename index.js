@@ -1,7 +1,11 @@
-const express = require('express')
-const PORT = process.env.PORT || 5000
 const jsforceAjaxProxy = require('jsforce-ajax-proxy')
-
-express()
+const https = require("https"), fs = require("fs");
+const options = {
+  key: fs.readFileSync('cert/toonboom-wildcard.key'),
+  cert: fs.readFileSync('cert/wildcard.toonboom.com.pem')
+};
+const app = express();
+app
   .all('/proxy/?*', jsforceAjaxProxy({ enableCORS: true }))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+  .listen(8000);
+https.createServer(options, app).listen(8080);
