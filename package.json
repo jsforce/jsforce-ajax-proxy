@@ -1,25 +1,25 @@
 {
-  "name": "jsforce-ajax-proxy",
-  "description": "Ajax proxy server to access Salesforce APIs from browser JavaScript resides in outer domain.",
-  "version": "2.0.0",
-  "main": "lib/proxy.js",
-  "scripts": {
-    "start": "node lib/server.js"
-  },
-  "files": [
-    "lib",
-    "LICENSE",
-    "Procfile",
-    "README.md",
-    "package.json"
-  ],
-  "dependencies": {
-    "cors": "^2.8.5",
-    "debug": "^4.1.1",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "https-localhost": "^4.6.3",
-    "jsforce": "^1.10.0",
-    "request": "^2.88.2"
-  }
+	"name": "jsforce-ajax-proxy",
+	"description": "Ajax proxy server to access Salesforce APIs from browser JavaScript resides in outer domain.",
+	"version": "2.0.0",
+	"main": "lib/proxy.js",
+	"scripts": {
+		"start": "node lib/server.js"
+	},
+	"files": [
+		"lib",
+		"LICENSE",
+		"Procfile",
+		"README.md",
+		"package.json"
+	],
+	"dependencies": {
+		"cors": "^2.8.5",
+		"debug": "^4.1.1",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"https-localhost": "^4.6.3",
+		"jsforce": "^1.10.0",
+		"request": "^2.88.2"
+	}
 }
