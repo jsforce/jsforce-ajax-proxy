@@ -14,15 +14,18 @@
 		"package.json"
 	],
 	"dependencies": {
+		"axios": "^0.26.1",
 		"cors": "^2.8.5",
 		"debug": "^4.1.1",
 		"decode-html": "^2.0.0",
 		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
 		"fetch-base64": "^2.1.2",
+		"form-data": "^4.0.0",
 		"https-localhost": "^4.6.3",
 		"jsforce": "^1.10.0",
-		"node-fetch": "^2.6.1",
+		"node-blob": "0.0.2",
+		"node-fetch": "^2.6.7",
 		"request": "^2.88.2",
 		"url": "^0.11.0"
 	}
